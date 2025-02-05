@@ -51,6 +51,21 @@ def top50(bikes):
 
     components.html(map._repr_html_(),height=500)
 
+def time_analysis(bikes):
+    
+
+def bike_main():
+    tab1, tab2, tab3 = st.tabs(["데이터보기","인기대여소50"])
+
+    with tab1:
+        data = data_preprecessing()
+        st.dataframe(data.head(20))
+    with tab2:
+        top50(data)
+    with tab3:
+        time_analysis(data)
+
+
 if __name__ =='__main__':
     data = data_preprecessing()
     st.dataframe(data.head(20))
